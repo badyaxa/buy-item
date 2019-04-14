@@ -8,10 +8,10 @@
         <version>2.1.4.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>ua.in.bibi</groupId>
-    <artifactId>ecommerce-online-shopping</artifactId>
+    <groupId>bohdan.stasiv</groupId>
+    <artifactId>buy-item</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>ecommerce-online-shopping</name>
+    <name>buy-item</name>
     <description>Ecommerce online shopping project on Spring Boot</description>
 
     <properties>
