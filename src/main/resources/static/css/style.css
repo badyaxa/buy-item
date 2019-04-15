@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.top-menu {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.item {
+    width: 31%;
+    margin-bottom: 40px;
+}
+
+.item-image {
+    width: 100%;
+}

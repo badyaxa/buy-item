@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @CrossOrigin
 @Controller
 @RequestMapping("/admin")
-public class AdminHomeController {
+public class AdminController {
 
     private String htmlPagePath = "admin/";
 
