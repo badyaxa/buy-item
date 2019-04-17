@@ -21,7 +21,7 @@ public class Carts {
     private Long id;
 
     @OneToOne(mappedBy = "carts")
-    private Users users;
+    private Customers customers;
 
     @ManyToMany
     private List<Products> products = new ArrayList<>();

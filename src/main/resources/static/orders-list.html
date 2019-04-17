@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Bootstrap Example</title>
+    <title>User Page</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <style>
@@ -38,24 +38,24 @@
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <button class="navbar-toggle" data-target="#myNavbar" data-toggle="collapse" type="button">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Logo</a>
+            <a class="navbar-brand" href="/">Logo</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li><a href="http://localhost:8080/index.html">Home</a></li>
-                <li><a href="http://localhost:8080/categories.html">Categories</a></li>
-                <li><a href="http://localhost:8080/products.html">Products</a></li>
-                <li><a href="http://localhost:8080/orders.html">Orders</a></li>
-                <li><a href="http://localhost:8080/admin/index.html">Admin</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/categories">Categories</a></li>
+                <li><a href="/products">Products</a></li>
+                <li><a href="/contact">Contact</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="http://localhost:8080/user-page.html"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
-                <li><a href="http://localhost:8080/cart.html"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+                <li><a href="/user"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
+                <li class="active"><a href="/user/orders">Orders</a></li>
+                <li><a href="/user/cart"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
             </ul>
         </div>
     </div>
@@ -66,58 +66,66 @@
         <div class="col-sm-4">
             <div class="panel panel-primary">
                 <div class="panel-heading">BLACK FRIDAY DEAL</div>
-                <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+                <div class="panel-body"><img alt="Image" class="img-responsive"
+                                             src="https://placehold.it/150x80?text=IMAGE" style="width:100%"></div>
                 <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
             </div>
         </div>
         <div class="col-sm-4">
             <div class="panel panel-danger">
                 <div class="panel-heading">BLACK FRIDAY DEAL</div>
-                <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+                <div class="panel-body"><img alt="Image" class="img-responsive"
+                                             src="https://placehold.it/150x80?text=IMAGE" style="width:100%"></div>
                 <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
             </div>
         </div>
         <div class="col-sm-4">
             <div class="panel panel-success">
                 <div class="panel-heading">BLACK FRIDAY DEAL</div>
-                <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+                <div class="panel-body"><img alt="Image" class="img-responsive"
+                                             src="https://placehold.it/150x80?text=IMAGE" style="width:100%"></div>
                 <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
             </div>
         </div>
     </div>
-</div><br>
+</div>
+<br>
 
 <div class="container">
     <div class="row">
         <div class="col-sm-4">
             <div class="panel panel-primary">
                 <div class="panel-heading">BLACK FRIDAY DEAL</div>
-                <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+                <div class="panel-body"><img alt="Image" class="img-responsive"
+                                             src="https://placehold.it/150x80?text=IMAGE" style="width:100%"></div>
                 <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
             </div>
         </div>
         <div class="col-sm-4">
             <div class="panel panel-primary">
                 <div class="panel-heading">BLACK FRIDAY DEAL</div>
-                <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+                <div class="panel-body"><img alt="Image" class="img-responsive"
+                                             src="https://placehold.it/150x80?text=IMAGE" style="width:100%"></div>
                 <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
             </div>
         </div>
         <div class="col-sm-4">
             <div class="panel panel-primary">
                 <div class="panel-heading">BLACK FRIDAY DEAL</div>
-                <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+                <div class="panel-body"><img alt="Image" class="img-responsive"
+                                             src="https://placehold.it/150x80?text=IMAGE" style="width:100%"></div>
                 <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
             </div>
         </div>
     </div>
-</div><br><br>
+</div>
+<br><br>
 
 <footer class="container-fluid text-center">
     <p>Online Store Copyright</p>
     <form class="form-inline">Get deals:
-        <input type="email" class="form-control" size="50" placeholder="Email Address">
-        <button type="button" class="btn btn-danger">Sign Up</button>
+        <input class="form-control" placeholder="Email Address" size="50" type="email">
+        <button class="btn btn-danger" type="button">Sign Up</button>
     </form>
 </footer>
 

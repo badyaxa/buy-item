@@ -18,7 +18,8 @@ import java.util.Set;
 @NoArgsConstructor
 @ToString(exclude = "orders")
 @Entity
-public class Users {
+@Table(name = "users")
+public class Customers {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -49,7 +50,7 @@ public class Users {
     @OneToOne
     private Carts carts;
 
-    @OneToMany(mappedBy = "users")
+    @OneToMany(mappedBy = "customers")
     private Set<Orders> orders = new HashSet<>();
 
 }

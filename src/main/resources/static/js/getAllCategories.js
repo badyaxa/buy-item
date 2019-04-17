@@ -5,7 +5,7 @@ $('#direction').change(makeRequest);
 
 function makeRequest() {
     $.ajax({
-        url: 'http://localhost:8080/api/categories/page'
+        url: '/api/categories/page'
         , type: 'POST'
         , contentType: 'application/json'
         , data: JSON.stringify(getPaginationRequest())
@@ -22,7 +22,7 @@ function appendCarsToContainer(items) {
     let $container = $('.container');
     $container.html('');
     for (let item of items) {
-        let img = item.pathToImage ? 'http://localhost:8080/img/' + item.pathToImage : 'http://denrakaev.com/wp-content/uploads/2015/03/no-image.png';
+        let img = item.pathToImage ? '/img/' + item.pathToImage : 'http://denrakaev.com/wp-content/uploads/2015/03/no-image.png';
         $container.append(`
                     <div class="item">
                          <a href="http://localhost/brand/${item.id}">

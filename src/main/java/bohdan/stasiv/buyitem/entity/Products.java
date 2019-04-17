@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -41,5 +42,8 @@ public class Products {
     @ManyToMany(mappedBy = "products")
     @ToString.Exclude
     private List<Orders> orders = new ArrayList<>();
+
+    @Transient
+    private MultipartFile productImage;
 
 }
