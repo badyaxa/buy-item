@@ -10,8 +10,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping
 public class CartsController {
 
+    private String adminPagePath = "admin";
+
     @GetMapping("/user/cart")
     public String showUserCart() {
         return "/cart";
+    }
+
+    @GetMapping("/admin/carts")
+    public String showUsersCarts() {
+        return "/" + adminPagePath + "/carts-management";
     }
 }

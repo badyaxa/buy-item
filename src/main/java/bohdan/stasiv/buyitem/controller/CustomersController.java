@@ -6,9 +6,16 @@ import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin
 @Controller
-@RequestMapping("/user")
+@RequestMapping
 //@SessionAttributes("sessionUsername")
 public class CustomersController {
+
+    private String adminPagePath = "admin";
+
+    @GetMapping("/admin/customers")
+    public String showCustomersTable() {
+        return "/" + adminPagePath + "/customers-management";
+    }
 
 //	@Autowired
 //	private UsersService usersService;
@@ -25,7 +32,7 @@ public class CustomersController {
 //		return credentialService.getUsername(auth);
 //	}
 
-    @GetMapping
+    @GetMapping("/user")
     public String showCustomerHomepage(
 //			@ModelAttribute("sessionUsername") String username,
 //			Model model
