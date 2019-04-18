@@ -29,7 +29,7 @@ public class CategoriesController {
     public String showCategoryAddingForm(/*Model model*/) {
 //		model.addAttribute("categoryList", categoryService.getCategoryCategoryList());
 //		model.addAttribute("category", new Category());
-        return "/" + adminPagePath + "/category-form";
+        return "/" + adminPagePath + "/categories-management";
     }
 
     @GetMapping("/admin/categories")
@@ -37,7 +37,7 @@ public class CategoriesController {
 //		model.addAttribute("categoryList", categoryService.getCategoryCategoryList());
 //		model.addAttribute("category", new Category());
 //        return "/" + adminPagePath + "/category-management";
-        return "/admin/categories-management";
+        return "/" + adminPagePath + "/categories-management";
     }
 
 
@@ -54,7 +54,7 @@ public class CategoriesController {
     ) {
 //		model.addAttribute("categoryList", categoryService.getCategoryCategoryList());
 //		model.addAttribute("category", categoryService.find(categoryId));
-        return "/" + adminPagePath + "/category-form";
+        return "/" + adminPagePath + "/categories-management";
     }
 
     //	/**
@@ -116,12 +116,12 @@ public class CategoriesController {
 //		categoryService.remove(category);
 //		return "redirect:/categories/list/page/1";
 //		return "redirect:/" + adminPagePath + "/categories-inventory";
-        return "redirect:/admin/categories-inventory";
+        return "redirect:/admin/categories";
     }
 
 //    private final int PAGE_SIZE = 10;
 
-
+    ////////////////////user/////////////////////////////////////////////////////////////////////////////////////////
     @GetMapping("/categories")
     public String showCategories() {
         return "redirect:/categories/list/page/1";

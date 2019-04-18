@@ -27,17 +27,17 @@ public class ProductsController {
 //	 */
     @GetMapping("/admin/product/create")
     public String showProductAddingForm(/*Model model*/) {
-//		model.addAttribute("categoryList", productService.getProductCategoryList());
+//		model.addAttribute("productList", productService.getProductProductList());
 //		model.addAttribute("product", new Product());
-        return "/" + adminPagePath + "/product-form";
+        return "/" + adminPagePath + "/products-management";
     }
 
     @GetMapping("/admin/products")
     public String showProductsTable(/*Model model*/) {
-//		model.addAttribute("categoryList", productService.getProductCategoryList());
+//		model.addAttribute("productList", productService.getProductProductList());
 //		model.addAttribute("product", new Product());
 //        return "/" + adminPagePath + "/product-management";
-        return "/admin/products-management";
+        return "/" + adminPagePath + "/products-management";
     }
 
 
@@ -52,9 +52,9 @@ public class ProductsController {
     public String showProductUpdatingForm(@PathVariable("id") long id
             /*, Model model*/
     ) {
-//		model.addAttribute("categoryList", productService.getProductCategoryList());
+//		model.addAttribute("productList", productService.getProductProductList());
 //		model.addAttribute("product", productService.find(productId));
-        return "/" + adminPagePath + "/product-form";
+        return "/" + adminPagePath + "/products-management";
     }
 
     //	/**
@@ -116,12 +116,12 @@ public class ProductsController {
 //		productService.remove(product);
 //		return "redirect:/products/list/page/1";
 //		return "redirect:/" + adminPagePath + "/products-inventory";
-        return "redirect:/admin/products-inventory";
+        return "redirect:/admin/products";
     }
 
 //    private final int PAGE_SIZE = 10;
 
-
+    ////////////////////user/////////////////////////////////////////////////////////////////////////////////////////
     @GetMapping("/products")
     public String showProducts() {
         return "redirect:/products/list/page/1";

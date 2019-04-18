@@ -26,7 +26,7 @@ public class ApiCategoriesController {
     }
 
     @GetMapping("/{id}")
-    public CategoriesResponse getCategoryById(@PathVariable Long id) {
+    public CategoriesResponse getById(@PathVariable Long id) {
         if (id > 0) {
             return categoriesService.findOneById(id);
         } else {
@@ -35,7 +35,7 @@ public class ApiCategoriesController {
     }
 
     @GetMapping("/all")
-    public List<CategoriesResponse> findAll() {
+    public List<CategoriesResponse> getAll() {
         return categoriesService.findAll();
     }
 
