@@ -32,6 +32,16 @@ public class PublicController {
         return "contact";
     }
 
+    @GetMapping("oplata")
+    public String showPaymentPage() {
+        return "oplata";
+    }
+
+    @GetMapping("dostavka")
+    public String showDeliveryPage() {
+        return "dostavka";
+    }
+
 
 //    @GetMapping
 //    public String index() {
