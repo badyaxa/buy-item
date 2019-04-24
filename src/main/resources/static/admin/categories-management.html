@@ -1,106 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title>Admin Categories</title>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1" name="viewport">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <style>
-        /* Remove the navbar's default rounded borders and increase the bottom margin */
-        .navbar {
-            margin-bottom: 50px;
-            border-radius: 0;
-        }
+	<title>Admin Categories</title>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<style>
+		/* Remove the navbar's default rounded borders and increase the bottom margin */
 
-        /* Remove the jumbotron's default bottom margin */
-        .jumbotron {
-            margin-bottom: 0;
-        }
+		.navbar {
+			margin-bottom: 50px;
+			border-radius: 0;
+		}
 
-        /* Add a gray background color and some padding to the footer */
-        footer {
-            background-color: #f2f2f2;
-            padding: 25px;
-        }
-    </style>
+		/* Remove the jumbotron's default bottom margin */
+
+		.jumbotron {
+			margin-bottom: 0;
+		}
+
+		/* Add a gray background color and some padding to the footer */
+
+		footer {
+			background-color: #f2f2f2;
+			padding: 25px;
+		}
+	</style>
 </head>
-<body>
 
+<body>
 <!--<div class="jumbotron">-->
 <!--<div class="container text-center">-->
 <!--<h1>Online Store</h1>-->
 <!--<p>Mission, Vission & Values</p>-->
 <!--</div>-->
 <!--</div>-->
-
 <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button class="navbar-toggle" data-target="#myNavbar" data-toggle="collapse" type="button">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">Logo</a>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
-                <li><a href="/admin">Admin</a></li>
-                <li><a href="/swagger-ui.html">HomeSwagger</a></li>
-                <li class="active"><a href="/admin/categories">Categories</a></li>
-                <li><a href="/admin/products">Products</a></li>
-                <li><a href="/admin/customers">Customers</a></li>
-                <li><a href="/admin/orders">Orders</a></li>
-                <li><a href="/admin/carts"><span class="glyphicon glyphicon-shopping-cart"></span> Products in customers
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button class="navbar-toggle" data-target="#myNavbar" data-toggle="collapse" type="button"><span
+					class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
+			<a class="navbar-brand" href="/">Logo</a></div>
+		<div class="collapse navbar-collapse" id="myNavbar">
+			<ul class="nav navbar-nav">
+				<li><a href="/admin">Admin</a></li>
+				<li><a href="/swagger-ui.html" target="_blank">HomeSwagger</a></li>
+				<li class="active"><a href="/admin/categories">Categories</a></li>
+				<li><a href="/admin/products">Products</a></li>
+				<li><a href="/admin/customers">Customers</a></li>
+				<li><a href="/admin/orders">Orders</a></li>
+				<li><a href="/admin/carts"><span class="glyphicon glyphicon-shopping-cart"></span> Products in customers
                     carts</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Logout</a></li>
-            </ul>
-        </div>
-    </div>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="#"><span class="glyphicon glyphicon-user"></span> Logout</a></li>
+			</ul>
+		</div>
+	</div>
 </nav>
-
 <div style="margin-top: 60px"></div>
 
-<div class="container">
-    <h1>Admin</h1>
-    <h2>Categories</h2>
 
-    <h3>your URL is</h3>
-
-    <p id="demo"></p>
-
-
-    <!--<div class="container">-->
-    <!--<div class="row">-->
-    <!--<div class="col-sm-4">-->
-    <!--<div class="panel panel-primary">-->
-    <!--<div class="panel-heading">BLACK FRIDAY DEAL</div>-->
-    <!--<div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>-->
-    <!--<div class="panel-footer">Buy 50 mobiles and get a gift card</div>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--<div class="col-sm-4">-->
-    <!--<div class="panel panel-danger">-->
-    <!--<div class="panel-heading">BLACK FRIDAY DEAL</div>-->
-    <!--<div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>-->
-    <!--<div class="panel-footer">Buy 50 mobiles and get a gift card</div>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--<div class="col-sm-4">-->
-    <!--<div class="panel panel-success">-->
-    <!--<div class="panel-heading">BLACK FRIDAY DEAL</div>-->
-    <!--<div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>-->
-    <!--<div class="panel-footer">Buy 50 mobiles and get a gift card</div>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--</div>-->
-</div>
+<!--<div class="container">-->
+<!--<h1>Admin</h1>-->
+<!--<h2>Categories</h2>-->
+<!--<h3>your URL is</h3>-->
+<!--<p id="demo"></p>-->
+<!--<div class="container">-->
+<!--<div class="row">-->
+<!--<div class="col-sm-4">-->
+<!--<div class="panel panel-primary">-->
+<!--<div class="panel-heading">BLACK FRIDAY DEAL</div>-->
+<!--<div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>-->
+<!--<div class="panel-footer">Buy 50 mobiles and get a gift card</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="col-sm-4">-->
+<!--<div class="panel panel-danger">-->
+<!--<div class="panel-heading">BLACK FRIDAY DEAL</div>-->
+<!--<div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>-->
+<!--<div class="panel-footer">Buy 50 mobiles and get a gift card</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="col-sm-4">-->
+<!--<div class="panel panel-success">-->
+<!--<div class="panel-heading">BLACK FRIDAY DEAL</div>-->
+<!--<div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>-->
+<!--<div class="panel-footer">Buy 50 mobiles and get a gift card</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
 <br>
-
 <!--<div class="container">-->
 <!--<div class="row">-->
 <!--<div class="col-sm-4">-->
@@ -127,16 +121,396 @@
 <!--</div>-->
 <!--</div><br><br>-->
 
-<footer class="container-fluid text-center">
-    <p>Online Store Copyright</p>
-    <form class="form-inline">Get deals:
-        <input class="form-control" placeholder="Email Address" size="50" type="email">
-        <button class="btn btn-danger" type="button">Sign Up</button>
-    </form>
-</footer>
+
+<!-- Trigger/Open The Modal -->
+<button id="openModal">Create item</button>
+
+<input onclick="location.href='/brands.html';" type="button" value="BRANDS with FOTOS  + pagination"/>
+<div class="pagination" id="pagination">
+	<select id="size">
+		<option value="6">6</option>
+		<option value="9">9</option>
+		<option value="12">12</option>
+	</select>
+
+	<select id="direction">
+		<option value="ASC">name A - Z</option>
+		<option value="DESC">name Z - A</option>
+	</select>
+
+
+	<input disabled id="page" type="text" value="1">
+
+	<input class="form-control" id="search" name="search" onfocus="this.value=''"
+		   placeholder="Search by name     (доробити патерн)"
+		   type="text"
+		   value=""/>
+
+	<button onclick="clearSearch()">CLEAR</button>
+
+</div>
+<div align="center" id="paginat"></div>
+<!-- The Modal -->
+<div class="modal" id="myModal">
+	<!-- Modal content -->
+	<div class="modal-content">
+		<div class="modal-header"><span class="close">&times;</span>
+			<h2>Create item</h2></div>
+
+		<div class="modal-body">
+			<div id="addButtonToModal">
+				<form>
+					<input disabled id="itemId" type="text">
+					<label for="fname">Name</label>
+					<input id="fname" name="name" placeholder="Name.." type="text">
+					<!--<br>-->
+					<!--<label for="lname">Last Name</label><br>-->
+					<!--<input type="text" id="lname" name="lastname" placeholder="Your last name.."><br>-->
+					<!--<label for="age">Age</label><br>-->
+					<!--<input type="number" id="age" name="age" placeholder="Your age.."><br>-->
+					<button class="button" id="btnCreatePerson">Create/Update</button>
+				</form>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<h3>Form for new item</h3></div>
+	</div>
+</div>
+<!--<div id="updateModal" class="modal">-->
+<!--&lt;!&ndash; Modal content &ndash;&gt;-->
+<!--<div class="modal-content">-->
+<!--<div class="modal-header"><span class="closeUp">x</span>-->
+<!--<h2>Update item</h2></div>-->
+
+<!--<div class="modal-body">-->
+<!--<div>-->
+<!--<form>-->
+<!--<input type="text" id = "itemId" disabled>-->
+<!--<label for="fname">Name</label>-->
+<!--<input type="text" id="fname" name="name" placeholder="Name..">-->
+<!--&lt;!&ndash;<br>&ndash;&gt;-->
+<!--&lt;!&ndash;<label for="lname">Last Name</label><br>&ndash;&gt;-->
+<!--&lt;!&ndash;<input type="text" id="lname" name="lastname" placeholder="Your last name.."><br>&ndash;&gt;-->
+<!--&lt;!&ndash;<label for="age">Age</label><br>&ndash;&gt;-->
+<!--&lt;!&ndash;<input type="number" id="age" name="age" placeholder="Your age.."><br>&ndash;&gt;-->
+<!--<input type="button" id="btnCreatePerson" value="Create"></form>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="modal-footer">-->
+<!--<h3>Form for edit item</h3></div>-->
+<!--</div>-->
+<!--</div>-->
+
+<table id="items"></table>
+
+<!--<div class="itemscontainer"></div>-->
 <script>
-    document.getElementById("demo").innerHTML =
-        "Page path is: " + window.location.pathname;
+	var mainUrl = "/api";
+	ssssttttaaaarttt();
+
+
+	// makeRequest();
+	$('#page').change(getAllPersons);
+	$('#size').change(getAllPersons);
+	$('#direction').change(getAllPersons);
+	$('#search').change(getAllPersons);
+
+	function ssssttttaaaarttt() {
+
+		getAllPersons();
+		setModalConfiguration();
+		setActionOnCreateBtn();
+
+	}
+
+
+	//start when load page PS reload page for triggered http request
+
+	function getAllPersons() {
+		if ($('#search').val().length > 0) {
+			// $('#direction').val(1);
+			$('#page').val(1);
+			// $('#size').val(1);
+		}
+		$.ajax({
+			url: mainUrl + "/categories/page?direction=" + ($('#direction').val()) + "&page=" + ($('#page').val() - 1) + "&size=" + ($('#size').val()) + "&sortFieldName=id" + "&value=" + ($('#search').val())
+			, type: "GET"
+			, contentType: "application/json"
+			, success: function (dataResponse) {
+
+				setPersonsToTable(dataResponse.content);
+
+				setActionOnUpdateButtons();
+				setActionOnDeleteButtons();
+
+				setPagination(dataResponse.totalPages, dataResponse.totalElements);
+			}
+			, error: function (error) {
+				alert("197" + error.message);
+			}
+		});
+	}
+
+	function setPagination(allPages, allElements) {
+		var listPagi = $("#paginat");
+		$("#paginat").html('');
+		if (allPages >= 20) {
+// console.log(allPages/4);
+			for (var i = 1; i <= (allPages / 3); i++) {
+
+				if (i == $('#page').val()) {
+					listPagi.append('<button class="btn active">' +
+							i +
+							'</button>');
+				} else {
+					listPagi.append('<button onclick="goToPage(' +
+							i +
+							')">' +
+							i +
+							'</button>');
+				}
+			}
+			listPagi.append('<button type="button" disabled>' +
+					'........</button><button>' +
+					allPages +
+					'</button>');
+		}
+
+		if (allPages < 20) {
+
+			// $("#paginat").html('');
+
+			for (var i = 1; i < allPages; i++) {
+				if (i == $('#page').val()) {
+					var listPagi = $("#paginat");
+					listPagi.append('<button  class="btn active">' +
+							i +
+							'</button>');
+				} else {
+					$("#paginat");
+					listPagi.append('<button onclick="goToPage(' +
+							i +
+							')">' +
+							i +
+							'</button>');
+
+				}
+			}
+		}
+	}
+
+	function goToPage(goPage) {
+		$('#page').val(goPage);
+
+		ssssttttaaaarttt();
+	}
+
+	function clearSearch() {
+		$('#search').val('');
+		ssssttttaaaarttt();
+	}
+
+	function setPersonsToTable(items) {
+		$("#items").html('' +
+				'<tr>' +
+				'<th>Id</th>' +
+				'<th>Name</th>' +
+				'<th>File Name</th>' +
+				'<th>Update Button</th>' +
+				'<th>Delete Button</th>' +
+				' </tr>' +
+				'' +
+				'');
+
+
+		for (var i = 0; i < items.length; i++) {
+			setPersonToTable(items[i]);
+		}
+	}
+
+	function setPersonToTable(item) {
+		var tableOfPersons = $("#items");
+		tableOfPersons.append('<tr>'
+				+ '<input type="text" id = "itemId" hidden>'
+				+ '<td>' + item.id + '</td>'
+				+ '<td>' + item.name + '</td>'
+				+ '<td><img src="/img/image' + item.id + '.png" alt="' + item.name + '" height="35" width="35"></td>'
+				+ '<td><button id="btnCreatePerson"    class="update-button" value="' + item.id + '">Update</button></td>'
+				+ '<td><button class="button" value="' + item.id + '">Delete item</button></td>'
+				+ '</tr>');
+	}
+
+	//delete process
+	function setActionOnDeleteButtons() {
+		$(".button").each(function (index) {
+			$(this).click(function () {
+				$.ajax({
+					url: mainUrl + "/brands?id=" + $(this).val()
+					, type: "DELETE"
+					, success: function (data) {
+						alert("299" + 'record has been deleted');
+						location.reload();
+					}
+					, error: function (error) {
+						console.log("303" + error.message);
+					}
+				});
+			})
+		})
+	}
+
+	//update process
+	function setActionOnUpdateButtons() {
+		$(".update-button").each(function (index) {
+			$(this).click(function () {
+				$.ajax({
+					url: mainUrl + "/brands/" + $(this).val()
+					, type: "GET"
+					, success: function (data) {
+						// alert(data.id);
+						// alert(data.name);
+						var modal = document.getElementById('myModal');
+
+						var name = $("#fname").val(data.name);
+						var itemId = $("#itemId").val(data.id);
+						modal.style.display = "block";
+
+						// location.reload();
+					}
+					, error: function (error) {
+						alert("329" + error.message);
+					}
+
+
+					// $("#items").html('' +
+					//     '<input id="item-id" style="display: none">' +
+					//     '<input type="text" id="item-name" placeholder="Name"><br>' +
+					//     '<button id="update-button">Update</button>' +
+					//     '');
+					//
+					//
+					// for (var i = 0; i < items.length; i++) {
+					//     setPersonToTable(items[i]);
+					// }
+
+
+				});
+			})
+		})
+	}
+
+	function setActionOnCreateBtn() {
+
+		$("#btnCreatePerson").click(function () {
+
+			var buttonValue = $("#itemId").val();
+
+			if (buttonValue == 0) {
+
+				console.log("CREATE");
+				// console.log($("#itemId").val());
+				var name = $("#fname").val();
+				// var itemId = $("#itemId").val();
+				//				var lastName = $("#lname").val();
+				//				var age = $("#age").val();
+				// console.log("name=" + name);
+				// console.log($("#itemId").val());
+				var newPerson = {
+					"name": name
+					//					, "lastName": lastName
+					//					, "age": age
+				};
+				$.ajax({
+					url: mainUrl + "/brands"
+					, type: "POST"
+					, contentType: "application/json"
+					, data: JSON.stringify(newPerson)
+					, success: function (data) {
+						// alert(data);
+
+						// console.log(data);
+						location.reload();
+					}
+					, error: function (error) {
+						console.log(error.message);
+						// alert(error.message);
+					}
+				});
+			} else {
+				console.log("UPDATE");
+				// console.log($(".itemId").val());
+				var name = $("#fname").val();
+				var itemId = $("#itemId").val();
+				//				var lastName = $("#lname").val();
+				//				var age = $("#age").val();
+				// console.log("name=" + name);
+				// console.log($("#itemId").val());
+				var newPerson = {
+					"name": name
+					// , "id": itemId
+					//					, "age": age
+				};
+				$.ajax({
+					url: mainUrl + "/brands?id=" + itemId
+					, type: "PUT"
+					, contentType: "application/json"
+					, data: JSON.stringify(newPerson)
+					, success: function (data) {
+						// alert(data);
+
+						// console.log(data);
+						// location.reload();
+						ssssttttaaaarttt();
+					}
+					, error: function (error) {
+						console.log(error.message);
+						// alert(error.message);
+					}
+				});
+			}
+		});
+	}
+
+	function setModalConfiguration() {
+		// Get the modal
+		var modal = document.getElementById('myModal');
+		// Get the button that opens the modal
+		var btn = document.getElementById("openModal");
+		// Get the <span> element that closes the modal
+		var span = document.getElementsByClassName("close")[0];
+		// When the user clicks the button, open the modal
+		btn.onclick = function () {
+
+			$("#fname").val('');
+			$("#itemId").val('');
+
+			modal.style.display = "block";
+		};
+
+		//When the user clicks on <span> (x), close the modal
+		span.onclick = function () {
+			modal.style.display = "none";
+
+		};
+
+		// When the user clicks anywhere outside of the modal, close it
+		window.onclick = function (event) {
+			if (event.target == modal) {
+				modal.style.display = "none";
+			}
+		};
+
+	}
+
 </script>
+
+<footer class="container-fluid text-center">
+	<p>Online Store Copyright</p>
+	<form class="form-inline">Get deals:
+		<input class="form-control" placeholder="Email Address" size="50" type="email">
+		<button class="btn btn-danger" type="button">Sign Up</button>
+	</form>
+</footer>
 </body>
+
 </html>
