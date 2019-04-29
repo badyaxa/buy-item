@@ -9,12 +9,10 @@ import lombok.Setter;
 public class CategoriesResponse {
 
     private Long id;
-
     private String name;
 
     public CategoriesResponse(Categories category) {
         this.id = category.getId();
         this.name = category.getName();
     }
-
 }

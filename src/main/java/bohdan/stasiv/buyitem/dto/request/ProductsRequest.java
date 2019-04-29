@@ -19,11 +19,13 @@ public class ProductsRequest {
     private String name;
 
     @Positive
-    private Long brandId;
+    private Long price;
 
+    @NotNull
     @Positive
     private Long categoryId;
 
+//    @Positive
+//    private Long brandId;
 
-//    private Double volume;
 }

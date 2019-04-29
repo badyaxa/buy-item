@@ -15,11 +15,8 @@ import java.util.List;
 public class DataResponse<T> {
 
     private List<T> content;
-
     private Integer totalPages;
-
     private Long totalElements;
-
 
     public DataResponse(List<T> data, Page page) {
         this.content = data;

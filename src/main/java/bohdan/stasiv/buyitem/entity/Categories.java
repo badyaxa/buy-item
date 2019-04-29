@@ -1,7 +1,9 @@
 package bohdan.stasiv.buyitem.entity;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -12,8 +14,8 @@ import java.util.List;
 
 @Getter
 @Setter
-//@NoArgsConstructor
-//@ToString(exclude = "products")
+@NoArgsConstructor
+@ToString(exclude = "products")
 @Entity
 public class Categories {
 
@@ -27,7 +29,7 @@ public class Categories {
     @Column(nullable = false, unique = true)
     private String name;
 
-    @OneToMany(mappedBy = "categories")
+    @OneToMany(mappedBy = "category")
     private List<Products> products = new ArrayList<>();
 
 }

@@ -25,26 +25,10 @@ public class CategoriesService {
         return new CategoriesResponse(categoryRequestToCategories(request, null));
     }
 
-    private Categories categoryRequestToCategories(CategoriesRequest request, Categories category) {
-        if (category == null) {
-            category = new Categories();
-        }
-        category.setName(request.getName());
-        return categoriesRepository.save(category);
-    }
-
-    public CategoriesResponse update(CategoriesRequest request, Long id) throws WrongInputException {
-        return new CategoriesResponse(categoryRequestToCategories(request, findOne(id)));
-    }
-
     public Categories findOne(Long id) throws WrongInputException {
         return categoriesRepository
                 .findById(id)
                 .orElseThrow(() -> new WrongInputException("Categories with id " + id + " not exists"));
-    }
-
-    public void delete(Long id) {
-        categoriesRepository.deleteById(id);
     }
 
     public CategoriesResponse findOneById(Long id) {
@@ -66,6 +50,24 @@ public class CategoriesService {
 
     public DataResponse<CategoriesResponse> findAll(PaginationRequest pagination) {
         Page<Categories> all = categoriesRepository.findAll(pagination.mapToPageRequest());
-        return new DataResponse<>(all.get().map(CategoriesResponse::new).collect(Collectors.toList()), all.getTotalPages(), all.getTotalElements());
+        return new DataResponse<>(all.get().map(CategoriesResponse::new).collect(Collectors.toList()),
+                all.getTotalPages(), all.getTotalElements());
     }
+
+    public CategoriesResponse update(CategoriesRequest request, Long id) throws WrongInputException {
+        return new CategoriesResponse(categoryRequestToCategories(request, findOne(id)));
+    }
+
+    public void delete(Long id) {
+        categoriesRepository.deleteById(id);
+    }
+
+    private Categories categoryRequestToCategories(CategoriesRequest request, Categories category) {
+        if (category == null) {
+            category = new Categories();
+        }
+        category.setName(request.getName());
+        return categoriesRepository.save(category);
+    }
+
 }

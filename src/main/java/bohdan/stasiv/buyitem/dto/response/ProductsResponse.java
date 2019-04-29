@@ -11,32 +11,25 @@ import lombok.Setter;
 public class ProductsResponse {
 
     private Long id;
-
     private String name;
-
-    private String brandName;
-
+    private Long price;
     private String categoryName;
-
-
-//    private Integer year;
-
+//    private String brandName;
 //    private Double volume;
-
 
     /*
      * or else you can return car with countryResponse
      *
      *
-     * private CountryResponse countryResponse;
+     * private CustomersResponse countryResponse;
      */
 
     public ProductsResponse(Products product/*, Categories category*/) {
         id = product.getId();
         name = product.getName();
+        price = product.getPrice();
+        categoryName = product.getCategory().getName();
 //        brandName = product.getBrand().getName();
-//        categoryName = product.getCategory().getName();
 //        year = product.getYear();
-//        volume = product.getVolume();
     }
 }

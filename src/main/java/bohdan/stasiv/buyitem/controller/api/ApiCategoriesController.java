@@ -20,9 +20,9 @@ public class ApiCategoriesController {
     @Autowired
     private CategoriesService categoriesService;
 
-    @PostMapping
-    public CategoriesResponse create(@RequestBody @Valid CategoriesRequest categoriesRequest) {
-        return categoriesService.create(categoriesRequest);
+    @GetMapping("/all")
+    public List<CategoriesResponse> getAll() {
+        return categoriesService.findAll();
     }
 
     @GetMapping("/{id}")
@@ -34,9 +34,9 @@ public class ApiCategoriesController {
         }
     }
 
-    @GetMapping("/all")
-    public List<CategoriesResponse> getAll() {
-        return categoriesService.findAll();
+    @PostMapping
+    public CategoriesResponse create(@RequestBody @Valid CategoriesRequest categoriesRequest) {
+        return categoriesService.create(categoriesRequest);
     }
 
     @PostMapping("/page")
@@ -54,7 +54,7 @@ public class ApiCategoriesController {
     }
 
     @DeleteMapping
-    public void delete(@RequestParam Long id) throws WrongInputException {
+    public void delete(@RequestParam Long id) {
         if (id > 0) {
             categoriesService.delete(id);
         } else {

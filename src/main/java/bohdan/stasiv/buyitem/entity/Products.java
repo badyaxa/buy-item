@@ -19,7 +19,6 @@ import java.util.List;
 @Entity
 public class Products {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -30,10 +29,10 @@ public class Products {
     @Column(nullable = false, unique = true)
     private String name;
 
-    private Integer price;
+    private Long price;
 
     @ManyToOne
-    private Categories categories;
+    private Categories category;
 
     @ManyToMany(mappedBy = "products")
     @ToString.Exclude

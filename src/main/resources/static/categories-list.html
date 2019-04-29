@@ -16,8 +16,8 @@
 		}
 
 		.item {
-			width: 31%;
-			margin-bottom: 40px;
+            width: 19%;
+            margin-bottom: 10px;
 		}
 
 		.item-image {
@@ -85,9 +85,9 @@
 	<input disabled id="totallElements" type="text">
 	<!--<input type="text" id="totallPages" disabled>-->
 	<select id="size">
-		<option value="6">6</option>
-		<option value="9">9</option>
-		<option value="12">12</option>
+        <option value="10">10</option>
+        <option value="15">15</option>
+        <option value="20">20</option>
 	</select>
 	<select id="direction">
 		<option value="ASC">name A - Z</option>
@@ -205,7 +205,7 @@
 			page: $('#page').val() - 1
 			, size: $('#size').val()
 			, sortRequest: {
-				field: 'name'
+                fieldName: 'name'
 				, direction: $('#direction').val()
 			}
 		};

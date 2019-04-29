@@ -1,18 +1,25 @@
 package bohdan.stasiv.buyitem.repository;
 
+import bohdan.stasiv.buyitem.entity.Categories;
 import bohdan.stasiv.buyitem.entity.Products;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.stereotype.Repository;
-
-import java.util.List;
 
 @Repository
 public interface ProductsRepository extends
 //        CrudRepository<Products, Long>,
-        JpaRepository<Products, Long>, JpaSpecificationExecutor<Products> {
-    List<Products> findAllByNameLike(String name);
-    List<Products> findByPriceIsBetween(Integer priceFrom, Integer priceTo);
+        JpaRepository<Products, Long>
+//        , JpaSpecificationExecutor<Products>
+{
+
+    Page<Products> findAllByCategory(Categories category, Pageable pageable);
+//    Page<Products> findAllByCategories(Categories category, Pageable pageable);
+//    Page<Car> findAllByCountry(Country country, Pageable pageable);
+
+//    List<Products> findAllByNameLike(String name);
+//    List<Products> findByPriceIsBetween(Integer priceFrom, Integer priceTo);
 
 }
 

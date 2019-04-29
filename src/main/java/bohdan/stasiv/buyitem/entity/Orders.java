@@ -22,7 +22,7 @@ public class Orders {
     private Long id;
 
     @ManyToOne
-    private Customers customers;
+    private Customers customer;
 
     @ManyToMany
     private List<Products> products = new ArrayList<>();

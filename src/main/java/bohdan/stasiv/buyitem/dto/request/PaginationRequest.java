@@ -10,9 +10,7 @@ import org.springframework.data.domain.Sort;
 public class PaginationRequest {
 
     private Integer size;
-
     private Integer page;
-
     private SortRequest sortRequest;
 
     public PageRequest mapToPageRequest() {
@@ -20,7 +18,7 @@ public class PaginationRequest {
         if (sortRequest == null) {
             return PageRequest.of(page, size);
         } else {
-            return PageRequest.of(page, size, Sort.by(sortRequest.getDirection(), sortRequest.getField()));
+            return PageRequest.of(page, size, Sort.by(sortRequest.getDirection(), sortRequest.getFieldName()));
         }
     }
 }

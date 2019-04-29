@@ -9,6 +9,7 @@ import javax.validation.constraints.NotNull;
 @Getter
 @Setter
 public class FileRequest {
+
     @NotBlank
     @NotNull
     private String data;

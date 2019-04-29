@@ -8,8 +8,6 @@ import org.springframework.data.domain.Sort;
 @Setter
 public class SortRequest {
 
+    private String fieldName;
     private Sort.Direction direction;
-
-    private String field;
-
 }

@@ -1,24 +1,24 @@
 package bohdan.stasiv.buyitem.entity;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Getter
 @Setter
 @NoArgsConstructor
+//@AllArgsConstructor
 @ToString(exclude = "orders")
 @Entity
-@Table(name = "users")
+//@Table(name = "users")
 public class Customers {
 
     @Id
@@ -31,27 +31,29 @@ public class Customers {
     @Column(nullable = false, unique = true)
     private String login;
 
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private String password;
 
-    private String firstName;
+//    private String firstName;
 
-    private String lastName;
+//    private String lastName;
 
-    @Email
-    @NotBlank
-    @Column(nullable = false, updatable = false)
-    private String email;// not null
+//    @Email
+//    @NotBlank
+//    @Column(nullable = false, updatable = false)
+//    private String email;
 
-    private String phone;
+//    private String phone;
 
-    @NotNull
+    //    @NotNull
     private Role role;
 
     @OneToOne
-    private Carts carts;
+    private Carts cart;
 
-    @OneToMany(mappedBy = "customers")
-    private Set<Orders> orders = new HashSet<>();
+    @OneToMany(mappedBy = "customer")
+//    private Set<Orders> orders = new HashSet<>();
+    private List<Orders> orders = new ArrayList<>();
 
 }
 

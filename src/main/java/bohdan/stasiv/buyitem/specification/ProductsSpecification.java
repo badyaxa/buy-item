@@ -20,6 +20,10 @@ public class ProductsSpecification implements Specification<Products> {
         return criteriaBuilder.like(root.get("name"), value);
     }
 
+//    private Predicate findByCategory (Root<Products> root, CriteriaBuilder criteriaBuilder) {
+//        return criteriaBuilder.equal(root.)
+//    }
+
 //    private Predicate findByFirstName(Root<Products> root, CriteriaBuilder criteriaBuilder){
 //        return criteriaBuilder.like(root.get("firstName"), value);
 //    }
