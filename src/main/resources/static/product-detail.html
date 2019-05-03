@@ -15,37 +15,33 @@
 			flex-wrap: wrap;
 		}
 
-		.item {
+        .item {
 			width: 40%;
 			margin-bottom: 10px;
 		}
 
-		.item-image {
+        .item-image {
 			width: 100%;
 		}
-
 		/* Remove the navbar's default rounded borders and increase the bottom margin */
 
-		.navbar {
+        .navbar {
 			margin-bottom: 50px;
 			border-radius: 0;
 		}
-
 		/* Remove the jumbotron's default bottom margin */
 
-		.jumbotron {
+        .jumbotron {
 			margin-bottom: 0;
 		}
-
 		/* Add a gray background color and some padding to the footer */
 
-		footer {
+        footer {
 			background-color: #f2f2f2;
 			padding: 25px;
 		}
 
-
-		.card {
+        .card {
 			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 			max-width: 300px;
 			margin: auto;
@@ -53,12 +49,12 @@
 			font-family: arial;
 		}
 
-		.price {
+        .price {
 			color: grey;
 			font-size: 22px;
 		}
 
-		.card button {
+        .card button {
 			border: none;
 			outline: 0;
 			padding: 12px;
@@ -70,7 +66,7 @@
 			font-size: 18px;
 		}
 
-		.card button:hover {
+        .card button:hover {
 			opacity: 0.7;
 		}
 	</style>
@@ -83,174 +79,59 @@
 <!--<p>Mission, Vission & Values</p>-->
 <!--</div>-->
 <!--</div>-->
-
 <nav class="navbar navbar-inverse navbar-fixed-top">
-	<div class="container-fluid">
-		<div class="navbar-header">
-			<button class="navbar-toggle" data-target="#myNavbar" data-toggle="collapse" type="button"><span
-					class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
-			<a class="navbar-brand" href="/">Logo</a></div>
-		<div class="collapse navbar-collapse" id="myNavbar">
-			<ul class="nav navbar-nav">
-				<li><a href="/">Home</a></li>
-				<li><a href="/categories">Categories</a></li>
-				<li class="active"><a href="/products">Products</a></li>
-				<li><a href="/oplata">Payment</a></li>
-				<li><a href="/dostavka">Delivery</a></li>
-				<li><a href="/contact">Contact</a></li>
-			</ul>
-			<!--<form class="form-inline my-2 my-md-0">-->
-			<!--<input class="form-control" type="text" placeholder="Search" aria-label="Search">-->
-			<!--</form>-->
-			<!--<input id="search" type="search" placeholder="Search" aria-label="Search">-->
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="/user"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
-				<li><a href="/user/orders">Orders</a></li>
-				<li><a href="/user/cart"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
-			</ul>
-		</div>
-	</div>
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button class="navbar-toggle" data-target="#myNavbar" data-toggle="collapse" type="button"><span
+                    class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
+            <a class="navbar-brand" href="/">Logo</a></div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a href="/">Home</a></li>
+                <li><a href="/categories">Categories</a></li>
+                <li class="active"><a href="/products">Products</a></li>
+                <li><a href="/oplata">Payment</a></li>
+                <li><a href="/dostavka">Delivery</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+            <!--<form class="form-inline my-2 my-md-0">-->
+            <!--<input class="form-control" type="text" placeholder="Search" aria-label="Search">-->
+            <!--</form>-->
+            <!--<input id="search" type="search" placeholder="Search" aria-label="Search">-->
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/user"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
+                <li><a href="/user/orders">Orders</a></li>
+                <li><a href="/user/cart"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+            </ul>
+        </div>
+    </div>
 </nav>
 <div style="margin-top: 60px"></div>
-<div class="container">
-	<!--	<h1 id="productName">product</h1>-->
-	<!--	<h2>detail</h2>-->
-	<!--	<h3>your URL is</h3>-->
-	<!--	<p id="demo"></p>-->
-	<!--	<p id="pathId"></p>-->
-
-	<!--<div class="container">-->
-	<!--<div class="row">-->
-	<!--<div class="col-sm-4">-->
-	<!--<div class="panel panel-primary">-->
-	<!--<div class="panel-heading">BLACK FRIDAY DEAL</div>-->
-	<!--<div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>-->
-	<!--<div class="panel-footer">Buy 50 mobiles and get a gift card</div>-->
-	<!--</div>-->
-	<!--</div>-->
-	<!--<div class="col-sm-4">-->
-	<!--<div class="panel panel-danger">-->
-	<!--<div class="panel-heading">BLACK FRIDAY DEAL</div>-->
-	<!--<div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>-->
-	<!--<div class="panel-footer">Buy 50 mobiles and get a gift card</div>-->
-	<!--</div>-->
-	<!--</div>-->
-	<!--<div class="col-sm-4">-->
-	<!--<div class="panel panel-success">-->
-	<!--<div class="panel-heading">BLACK FRIDAY DEAL</div>-->
-	<!--<div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>-->
-	<!--<div class="panel-footer">Buy 50 mobiles and get a gift card</div>-->
-	<!--</div>-->
-	<!--</div>-->
-	<!--</div>-->
-</div>
+<div class="container"></div>
 <br>
-<!--<div class="container">-->
-<!--<div class="row">-->
-<!--<div class="col-sm-4">-->
-<!--<div class="panel panel-primary">-->
-<!--<div class="panel-heading">BLACK FRIDAY DEAL</div>-->
-<!--<div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>-->
-<!--<div class="panel-footer">Buy 50 mobiles and get a gift card</div>-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="col-sm-4">-->
-<!--<div class="panel panel-primary">-->
-<!--<div class="panel-heading">BLACK FRIDAY DEAL</div>-->
-<!--<div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>-->
-<!--<div class="panel-footer">Buy 50 mobiles and get a gift card</div>-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="col-sm-4">-->
-<!--<div class="panel panel-primary">-->
-<!--<div class="panel-heading">BLACK FRIDAY DEAL</div>-->
-<!--<div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>-->
-<!--<div class="panel-footer">Buy 50 mobiles and get a gift card</div>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div><br><br>-->
 <footer class="container-fluid text-center">
-	<p>Online Store Copyright</p>
-	<form class="form-inline">Get deals:
-		<input class="form-control" placeholder="Email Address" size="50" type="email">
-		<button class="btn btn-danger" type="button">Sign Up</button>
-	</form>
+    <p>Online Store Copyright</p>
+    <form class="form-inline">Get deals:
+        <input class="form-control" placeholder="Email Address" size="50" type="email">
+        <button class="btn btn-danger" type="button">Sign Up</button>
+    </form>
 </footer>
 <script>
-	// document.getElementById("pagePath").innerHTML = "Page path is: " + window.location.pathname;
+    var pathname = window.location.pathname;
+    var appId = pathname.split('/')[3];
+    makeRequest();
 
-	// document.getElementById("pathId").innerHTML = "path Id : " + window.location.pathname.split('/')[3];
-
-
-	var pathname = window.location.pathname;
-	var appId = pathname.split('/')[3];
-	// $('#page').val(appId);
-	// setProductName();
-	// console.log(res.categoryName);
-
-	makeRequest();
-
-	// $('#page').change(makeRequest);
-	// $('#size').change(makeRequestS);
-	// $('#direction').change(makeRequest);
-	// $('#totallElements').val();
-
-	// $('#totallPages').change(makeRequest);
-
-	// function makeRequestS() {
-	// 	let pages = Math.round($('#totallElements').val() / $('#size').val());
-	// 	$('#page').val('1');
-	// 	makeRequest()
-	// }
-	// }
-
-	// function setPagination(currPage, allPages) {
-	// 	var listPagi = $("#paginationButtons");
-	// 	$("#paginationButtons").html('');
-	// 	if (currPage <= allPages) {
-	// 		for (var i = (currPage - 5); i < currPage; i++) {
-	// 			if (i > 0) {
-	// 				listPagi.append('<button onclick="goToPage(' + i + ')">' + i + '</button>');
-	// 			}
-	// 		}
-	// 		listPagi.append('<button  class="btn active">' + currPage + '</button>');
-	// 		var ii = currPage;
-	// 		ii++;
-	// 		var iiend = 0;
-	// 		for (ii; ii <= allPages; ii++) {
-	// 			if (iiend < 5) {
-	// 				listPagi.append('<button onclick="goToPage(' + ii + ')">' + ii + '</button>');
-	// 				iiend++;
-	// 			}
-	// 		}
-	// 	}
-	// 	// if ($('#page').val() != allPages) {
-	// 	// 	listPagi.append('...<button type="button" disabled>' + allPages + '</button>');
-	// 	// }
-	// }
-
-	function makeRequest() {
-		$.ajax({
-			url: '/api/product/' + appId
-			, type: 'GET'
-			, contentType: 'application/json'
-			// , data: JSON.stringify(getPaginationRequest())
-			, success: function (res) {
-				// setPagination($('#page').val(), res.totalPages);
-				// $('#totallElements').val(res.totalElements);
-				// $('#page').val(res.totalPages);
-				document.title = res.name;
-
-				// document.getElementById("categoryName").innerHTML = res.name;
-				// appendCarsToContainer(res.content)
-
-
-				let $container = $('.container');
-				// for (let item of items) {
-				let img = res.pathToImage ? '/img/' + res.pathToImage : 'http://denrakaev.com/wp-content/uploads/2015/03/no-image.png';
-				$container.html('');
-				$container.append(`
+    function makeRequest() {
+        $.ajax({
+            url: '/api/product/' + appId
+            , type: 'GET'
+            , contentType: 'application/json'
+            , success: function (res) {
+                document.title = res.name;
+                let $container = $('.container');
+                let img = res.pathToImage ? '/img/' + res.pathToImage : 'http://denrakaev.com/wp-content/uploads/2015/03/no-image.png';
+                $container.html('');
+                $container.append(`
 					<h2 style="text-align:center">${res.categoryName}</h2>
                     <div class="card">
 					  <img src=${img} alt=${res.name} style="width:100%">
@@ -260,98 +141,12 @@
 					  <p><button>Add to Cart</button></p>
 					</div>
             `)
-
-
-			}
-			, error: function (e) {
-				console.log(e)
-			}
-		})
-	}
-
-	// function appendCarsToContainer(items) {
-
-	// }
-	// }
-
-	// function setProName() {
-	// 	$.ajax({
-	// 		url: '/api/categories/' + appId
-	// 		, type: 'GET'
-	// 		, contentType: 'application/json'
-	// , data: JSON.stringify(getPaginationRequest())
-	// , success: function (res) {
-	// setPagination($('#page').val(), res.totalPages);
-	// console.log(res);
-
-
-	// console.log(res.name);
-	// document.title = res.name;
-
-	// var x = document.title;
-	// document.getElementById("categoryName").innerHTML = res.name;
-	// document.getElementById("pathId").innerHTML =
-
-	// document.getElementById("$categoryName").innerHTML = document.title;
-	// $('#title').val(res.name);
-	// $('#categoryName').val(res.name);
-	// $('#totallPages').val(1);
-	// appendCarsToContainer(res.content)
-	// let name  = res.name;
-	// let $title = $('.title');
-	// let $categoryName = $('.categoryName');
-	// $title.html('');
-	// $categoryName.html('');
-	// $title.append(res.name);
-	// $categoryName.append(res.name);
-
-	// 	}
-	// 	, error: function (e) {
-	// 		console.log(e)
-	// 	}
-	// })
-
-
-	// }
-
-	// function goToPage(goPage) {
-	// 	$('#page').val(goPage);
-	//
-	// 	makeRequest();
-	// }
-
-	// function getPaginationRequest() {
-	// 	return {
-	// 		page: $('#page').val() - 1
-	// 		, size: $('#size').val()
-	// 		, sortRequest: {
-	// 			fieldName: 'name'
-	// 			, direction: $('#direction').val()
-	// 		}
-	// 	};
-	// }
-
-	//		$('#pagePlus0').click(() = > {
-	//			$('#page').val(1);
-	//			makeRequest()
-	//		});
-	//		$('#pagePlus1').click(() = > {
-	//			$('#page').val(2);
-	//			makeRequest()
-	//		});
-	//		$('#pagePlus2').click(() = > {
-	//			$('#page').val(3);
-	//			makeRequest()
-	//		});
-	//		$('#pagePlus3').click(() = > {
-	//			$('#page').val(4);
-	//			makeRequest()
-	//		});
-	//		$('#pagePlus4').click(() = > {
-	//			$('#page').val(5);
-	//			makeRequest()
-	//		});
-
+            }
+            , error: function (e) {
+                console.log(e)
+            }
+        })
+    }
 </script>
 </body>
 

@@ -87,8 +87,7 @@
 	</select>
 	<ul class="pagination" id="paginationButtons"></ul>
 	<input disabled id="currentPage" type="hidden">
-	<input disabled id="totalPages" type="number">
-</div>
+	<input disabled id="totalPages" type="number"></div>
 <div class="container text-center"></div>
 <br>
 <footer class="container-fluid text-center">
@@ -107,7 +106,7 @@
 
 	function makeFirstRequest() {
 		let pathPageNumber = window.location.search.split('?page=')[1];
-		console.log(pathPageNumber);
+		// console.log(pathPageNumber);
 		if (pathPageNumber == null) {
 			$('#currentPage').val(1);
 		} else {

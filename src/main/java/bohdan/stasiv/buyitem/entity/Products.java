@@ -28,15 +28,15 @@ public class Products {
     @Column(nullable = false, unique = true)
     private String name;
 
-    //    @Column(name = "description")
     private String description;
 
-    @Column(/*name = "quantity", */nullable = false, columnDefinition = "int default 0")
-    @Min(value = 0, message = "*Quantity has to be non negative number")
+
+    @Column(nullable = false, columnDefinition = "int default 0")
+    @Min(value = 0, message = "Quantity has to be non negative number")
     private Integer quantity;
 
-    @Column(/*name = "price", */nullable = false)
-    @DecimalMin(value = "0.00", message = "*Price has to be non negative number")
+    @Column(nullable = false)
+    @DecimalMin(value = "0.00", message = "Price has to be non negative number")
     private BigDecimal price;
 
     @ManyToOne
