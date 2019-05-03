@@ -110,7 +110,7 @@
         } else {
             $('#currentPage').val(pathPageNumber);
         }
-        //console.log(window.location.href.split('?')[0] + '?page=' + $('#currentPage').val());
+        console.log(window.location.href.split('?')[0] + '?page=' + $('#currentPage').val());
         makeRequest()
     }
 
@@ -128,7 +128,7 @@
             , success: function (res) {
                 setPagination($('#currentPage').val(), res.totalPages);
                 $('#totallElements').val(res.totalElements);
-                $('#currentPage').val(res.totalPages);
+                $('#totalPages').val(res.totalPages);
                 appendItemsToContainer(res.content)
             }
             , error: function (e) {

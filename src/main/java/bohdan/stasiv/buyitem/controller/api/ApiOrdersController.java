@@ -43,6 +43,11 @@ public class ApiOrdersController {
         return ordersService.findAllByCustomerId(customerId, paginationRequest);
     }
 
+    @PostMapping("/page")
+    public DataResponse<OrdersResponse> getPage(@RequestBody PaginationRequest paginationRequest) {
+        return ordersService.findAll(paginationRequest);
+    }
+
     @PutMapping
     public OrdersResponse update(@RequestParam Long id, @RequestBody OrdersRequest ordersRequest) throws WrongInputException {
         return ordersService.update(id, ordersRequest);
