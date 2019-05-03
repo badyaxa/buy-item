@@ -125,42 +125,7 @@ public class ProductsController {
 
     ////////////////////user/////////////////////////////////////////////////////////////////////////////////////////
     @GetMapping("/products")
-//    public String showProducts() {
-//        return "redirect:/products/list/page/1";
-//    }
-
-//    @GetMapping("/products/list")
-//    public String showProductsList() {
-//        return "redirect:/products/list/page/1";
-//    }
-
-//    @GetMapping("/products/list/page/{pageNumber}")
     public String showProductsListPage(@RequestParam("page") Optional<Integer> page) {
-
-//        List<Products> productsList = null;
-//        try {
-//            productsList = productsService.getPagedList(pageNumber, PAGE_SIZE);
-//        } catch (IllegalArgumentException e) {
-//            // When invalid page number is supplied, view redirects to error page, with
-//            // back button linked to products list.
-//            model.addAttribute("backLink", "/products/list");
-//            return "error/page-not-exist";
-//        }
-
-//        model.addAttribute("productsList", productsList);
-//        model.addAttribute("productsTotalCount", productsService.getTotalCount());
-//        model.addAttribute("pageCount", productsService.getPageCount(PAGE_SIZE));
-//        model.addAttribute("currentPageNumber", pageNumber);
-
-//        String productslist = null;
-//        if (pageNumber.isPresent()) {
-//            productslist = "/products-list";
-//        } else {
-//            pageNumber = (Integer) 1;
-//            productslist = "/bad-request-page";
-//            productslist = "/products-list";
-//        }
-//        return productslist;
         return "/products-list";
     }
 
