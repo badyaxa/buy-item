@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 @CrossOrigin
 @Controller
 @RequestMapping
@@ -123,17 +125,17 @@ public class ProductsController {
 
     ////////////////////user/////////////////////////////////////////////////////////////////////////////////////////
     @GetMapping("/products")
-    public String showProducts() {
-        return "redirect:/products/list/page/1";
-    }
+//    public String showProducts() {
+//        return "redirect:/products/list/page/1";
+//    }
 
-    @GetMapping("/products/list")
-    public String showProductsList() {
-        return "redirect:/products/list/page/1";
-    }
+//    @GetMapping("/products/list")
+//    public String showProductsList() {
+//        return "redirect:/products/list/page/1";
+//    }
 
-    @GetMapping("/products/list/page/{pageNumber}")
-    public String showProductsListPage(@PathVariable("pageNumber") int pageNumber/*, Model model*/) {
+//    @GetMapping("/products/list/page/{pageNumber}")
+    public String showProductsListPage(@RequestParam("page") Optional<Integer> page) {
 
 //        List<Products> productsList = null;
 //        try {
@@ -150,13 +152,16 @@ public class ProductsController {
 //        model.addAttribute("pageCount", productsService.getPageCount(PAGE_SIZE));
 //        model.addAttribute("currentPageNumber", pageNumber);
 
-        String productslist = null;
-        if (pageNumber > 0) {
-            productslist = "/products-list";
-        } else {
-            productslist = "/bad-request-page";
-        }
-        return productslist;
+//        String productslist = null;
+//        if (pageNumber.isPresent()) {
+//            productslist = "/products-list";
+//        } else {
+//            pageNumber = (Integer) 1;
+//            productslist = "/bad-request-page";
+//            productslist = "/products-list";
+//        }
+//        return productslist;
+        return "/products-list";
     }
 
     @GetMapping("/product/detail/{id}")

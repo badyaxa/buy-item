@@ -3,8 +3,12 @@ package bohdan.stasiv.buyitem.controller;
 import bohdan.stasiv.buyitem.exception.WrongInputException;
 import bohdan.stasiv.buyitem.service.CategoriesService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 @CrossOrigin
 @Controller
@@ -122,18 +126,44 @@ public class CategoriesController {
 //    private final int PAGE_SIZE = 10;
 
     ////////////////////user/////////////////////////////////////////////////////////////////////////////////////////
+
     @GetMapping("/categories")
-    public String showCategories() {
-        return "redirect:/categories/list/page/1";
-    }
+//    public String showCategories() {
+//        return "redirect:/categories/list/page/1";
+//    }
+//
+//    @GetMapping("/categories/list")
+//    public String showCategoriesList() {
+//        return "redirect:/categories/list/page/1";
+//    }
+//
+//    @GetMapping("/categories/list/page/{pageNumber}")
+//    public String showCategoriesListPage(@PathVariable("pageNumber") int pageNumber/*, Model model*/) {
 
-    @GetMapping("/categories/list")
-    public String showCategoriesList() {
-        return "redirect:/categories/list/page/1";
-    }
 
-    @GetMapping("/categories/list/page/{pageNumber}")
-    public String showCategoriesListPage(@PathVariable("pageNumber") int pageNumber/*, Model model*/) {
+//    @GetMapping("/home")
+    public String showCategoriesListPage(@RequestParam("page") Optional<Integer> page) {
+
+        // Evaluate page. If requested parameter is null or less than 0 (to
+        // prevent exception), return initial size. Otherwise, return value of
+        // param. decreased by 1.
+//        int evalPage = (pageNumber.orElse(0) < 1) ? INITIAL_PAGE : pageNumber.get() - 1;
+//
+//        Page<Product> products = productService.findAllProductsPageable(new PageRequest(evalPage, 5));
+//        Pager pager = new Pager(products);
+//
+//        ModelAndView modelAndView = new ModelAndView();
+//        modelAndView.addObject("products", products);
+//        modelAndView.addObject("pager", pager);
+//        modelAndView.setViewName("/home");
+//        return modelAndView;
+//    }
+
+
+
+
+
+
 
 //        List<Categories> categoriesList = null;
 //        try {
@@ -149,14 +179,15 @@ public class CategoriesController {
 //        model.addAttribute("categoriesTotalCount", categoriesService.getTotalCount());
 //        model.addAttribute("pageCount", categoriesService.getPageCount(PAGE_SIZE));
 //        model.addAttribute("currentPageNumber", pageNumber);
-
-        String categorieslist = null;
-        if (pageNumber > 0) {
-            categorieslist = "/categories-list";
-        } else {
-            categorieslist = "/bad-request-page";
-        }
-        return categorieslist;
+//        String categorieslist = null;
+//        if (pageNumber.isPresent()) {
+//            categorieslist = "/categories-list";
+//        } else {
+//            pageNumber.orElse(1);
+//            categorieslist = "/bad-request-page";
+//        }
+//        return categorieslist;
+        return "/categories-list";
     }
 
     @GetMapping("/category/detail/{id}")
@@ -212,12 +243,13 @@ public class CategoriesController {
 //        model.addAttribute("currentPageNumber", pageNumber);
 //        model.addAttribute("keyword", keyword);
 
-        String categorieslist = null;
-        if (pageNumber > 0) {
-            categorieslist = "/categories-list";
-        } else {
-            categorieslist = "/bad-request-page";
-        }
-        return categorieslist;
+//        String categorieslist = null;
+//        if (pageNumber > 0) {
+//            categorieslist = "/categories-list";
+//        } else {
+//            categorieslist = "/bad-request-page";
+//        }
+//        return categorieslist;
+        return "/categories-list";
     }
 }

@@ -7,9 +7,8 @@ import lombok.ToString;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,7 +28,16 @@ public class Products {
     @Column(nullable = false, unique = true)
     private String name;
 
-    private Long price;
+    //    @Column(name = "description")
+    private String description;
+
+    @Column(/*name = "quantity", */nullable = false, columnDefinition = "int default 0")
+    @Min(value = 0, message = "*Quantity has to be non negative number")
+    private Integer quantity;
+
+    @Column(/*name = "price", */nullable = false)
+    @DecimalMin(value = "0.00", message = "*Price has to be non negative number")
+    private BigDecimal price;
 
     @ManyToOne
     private Categories category;

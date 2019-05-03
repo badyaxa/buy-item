@@ -40,7 +40,7 @@ public class ApiProductsController {
         return productsService.create(productsRequest);
     }
 
-    @PostMapping("/page/byCategoryId")
+    @PostMapping("/page/{categoryId}")
     public DataResponse<ProductsResponse> findAllByCategoryId(@RequestParam Long categoryId, @RequestBody PaginationRequest paginationRequest) throws WrongInputException {
         return productsService.findAllByCategoryId(categoryId, paginationRequest);
     }

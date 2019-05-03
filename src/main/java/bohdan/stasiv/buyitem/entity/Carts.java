@@ -10,7 +10,7 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 //@AllArgsConstructor
-@ToString(exclude = "products")
+//@ToString(exclude = "products")
 @Entity
 public class Carts {
 
@@ -19,7 +19,7 @@ public class Carts {
     private Long id;
 
     @OneToOne(mappedBy = "cart")
-    private Customers customers;
+    private Customers customer;
 
     @ManyToMany
     private List<Products> products = new ArrayList<>();

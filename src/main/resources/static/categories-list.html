@@ -16,27 +16,24 @@
 		}
 
 		.item {
-            width: 19%;
-            margin-bottom: 10px;
+			width: 19%;
+			margin-bottom: 10px;
 		}
-
+		
 		.item-image {
 			width: 100%;
 		}
-
 		/* Remove the navbar's default rounded borders and increase the bottom margin */
 
 		.navbar {
 			margin-bottom: 50px;
 			border-radius: 0;
 		}
-
 		/* Remove the jumbotron's default bottom margin */
 
 		.jumbotron {
 			margin-bottom: 0;
 		}
-
 		/* Add a gray background color and some padding to the footer */
 
 		footer {
@@ -77,57 +74,52 @@
 	</div>
 </nav>
 <div style="margin-top: 60px"></div>
-<!--<div class="container">-->
-<!--<h1>Categories</h1>-->
-<!--<h2>list</h2>-->
-<!--<h3>your URL is</h3>-->
 <div class="controllers">
-	<input disabled id="totallElements" type="text">
-	<!--<input type="text" id="totallPages" disabled>-->
+	<input disabled id="totallElements" type="number">
 	<select id="size">
-        <option value="10">10</option>
-        <option value="15">15</option>
-        <option value="20">20</option>
+		<option value="10">10</option>
+		<option value="15">15</option>
+		<option value="20">20</option>
 	</select>
 	<select id="direction">
 		<option value="ASC">name A - Z</option>
 		<option value="DESC">name Z - A</option>
 	</select>
-	<ul class="pagination" id="paginationButtons">
-		<!--<div id="paginationButtons">-->
-		<!--<li><button id="firstPage">1</button></li>-->
-		<!--<li><button id="pageMinus2">5</button></li>-->
-		<!--<li><button id="pageMinus1">6</button></li>-->
-		<!--<li class="active">-->
-		<!--<button id="currentPage">7</button>-->
-		<!--</li>-->
-		<!--<li><button id="pagePlus1">8</button></li>-->
-		<!--<li><button id="pagePlus2">9</button></li>-->
-		<!--<li><button id="lastPage">12</button></li>-->
-		<!--</div>-->
-	</ul>
-	<input disabled id="page" type="text">
-	<!--</div>-->
+	<ul class="pagination" id="paginationButtons"></ul>
+	<input disabled id="currentPage" type="hidden">
+	<input disabled id="totalPages" type="number">
 </div>
-<div class="container"></div>
+<div class="container text-center"></div>
+<br>
+<footer class="container-fluid text-center">
+	<p>Online Store Copyright</p>
+	<form class="form-inline">Get deals:
+		<input class="form-control" placeholder="Email Address" size="50" type="email">
+		<button class="btn btn-danger" type="button">Sign Up</button>
+	</form>
+</footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
-	var pathname = window.location.pathname;
-	var appId = pathname.split('/')[4];
-	$('#page').val(appId);
-	makeRequest();
-	$('#page').change(makeRequest);
-	$('#size').change(makeRequestS);
+	makeFirstRequest();
+	$('#currentPage').change(makeRequest);
 	$('#direction').change(makeRequest);
-	$('#totallElements').val();
+	$('#size').change(makeRequestSize);
 
-	// $('#totallPages').change(makeRequest);
-
-	function makeRequestS() {
-		// let pages = Math.round($('#totallElements').val() / $('#size').val());
-		$('#page').val('1');
+	function makeFirstRequest() {
+		let pathPageNumber = window.location.search.split('?page=')[1];
+		console.log(pathPageNumber);
+		if (pathPageNumber == null) {
+			$('#currentPage').val(1);
+		} else {
+			$('#currentPage').val(pathPageNumber);
+		}
+		console.log(window.location.href.split('?')[0] + '?page=' + $('#currentPage').val());
 		makeRequest()
-		// }
+	}
+
+	function makeRequestSize() {
+		$('#currentPage').val('1');
+		makeRequest()
 	}
 
 	function makeRequest() {
@@ -137,12 +129,10 @@
 			, contentType: 'application/json'
 			, data: JSON.stringify(getPaginationRequest())
 			, success: function (res) {
-				setPagination($('#page').val(), res.totalPages);
-				// console.log(res);
+				setPagination($('#currentPage').val(), res.totalPages);
 				$('#totallElements').val(res.totalElements);
-				$('#page').val(res.totalPages);
-				// $('#totallPages').val(1);
-				appendCarsToContainer(res.content)
+				$('#totalPages').val(res.totalPages);
+				appendItemsToContainer(res.content)
 			}
 			, error: function (e) {
 				console.log(e)
@@ -170,18 +160,14 @@
 				}
 			}
 		}
-		// if ($('#page').val() != allPages) {
-		// 	listPagi.append('...<button type="button" disabled>' + allPages + '</button>');
-		// }
 	}
 
 	function goToPage(goPage) {
-		$('#page').val(goPage);
-
+		$('#currentPage').val(goPage);
 		makeRequest();
 	}
 
-	function appendCarsToContainer(items) {
+	function appendItemsToContainer(items) {
 		let $container = $('.container');
 		$container.html('');
 		for (let item of items) {
@@ -202,94 +188,15 @@
 
 	function getPaginationRequest() {
 		return {
-			page: $('#page').val() - 1
+			page: $('#currentPage').val() - 1
 			, size: $('#size').val()
 			, sortRequest: {
-                fieldName: 'name'
+				fieldName: 'name'
 				, direction: $('#direction').val()
 			}
 		};
 	}
-
-	//		$('#pagePlus0').click(() = > {
-	//			$('#page').val(1);
-	//			makeRequest()
-	//		});
-	//		$('#pagePlus1').click(() = > {
-	//			$('#page').val(2);
-	//			makeRequest()
-	//		});
-	//		$('#pagePlus2').click(() = > {
-	//			$('#page').val(3);
-	//			makeRequest()
-	//		});
-	//		$('#pagePlus3').click(() = > {
-	//			$('#page').val(4);
-	//			makeRequest()
-	//		});
-	//		$('#pagePlus4').click(() = > {
-	//			$('#page').val(5);
-	//			makeRequest()
-	//		});
 </script>
-<!--<div class="container">-->
-<!--<div class="row">-->
-<!--<div class="col-sm-4">-->
-<!--<div class="panel panel-primary">-->
-<!--<div class="panel-heading">BLACK FRIDAY DEAL</div>-->
-<!--<div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>-->
-<!--<div class="panel-footer">Buy 50 mobiles and get a gift card</div>-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="col-sm-4">-->
-<!--<div class="panel panel-danger">-->
-<!--<div class="panel-heading">BLACK FRIDAY DEAL</div>-->
-<!--<div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>-->
-<!--<div class="panel-footer">Buy 50 mobiles and get a gift card</div>-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="col-sm-4">-->
-<!--<div class="panel panel-success">-->
-<!--<div class="panel-heading">BLACK FRIDAY DEAL</div>-->
-<!--<div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>-->
-<!--<div class="panel-footer">Buy 50 mobiles and get a gift card</div>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
-<br>
-<!--<div class="container">-->
-<!--<div class="row">-->
-<!--<div class="col-sm-4">-->
-<!--<div class="panel panel-primary">-->
-<!--<div class="panel-heading">BLACK FRIDAY DEAL</div>-->
-<!--<div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>-->
-<!--<div class="panel-footer">Buy 50 mobiles and get a gift card</div>-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="col-sm-4">-->
-<!--<div class="panel panel-primary">-->
-<!--<div class="panel-heading">BLACK FRIDAY DEAL</div>-->
-<!--<div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>-->
-<!--<div class="panel-footer">Buy 50 mobiles and get a gift card</div>-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="col-sm-4">-->
-<!--<div class="panel panel-primary">-->
-<!--<div class="panel-heading">BLACK FRIDAY DEAL</div>-->
-<!--<div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>-->
-<!--<div class="panel-footer">Buy 50 mobiles and get a gift card</div>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div><br><br>-->
-<footer class="container-fluid text-center">
-	<p>Online Store Copyright</p>
-	<form class="form-inline">Get deals:
-		<input class="form-control" placeholder="Email Address" size="50" type="email">
-		<button class="btn btn-danger" type="button">Sign Up</button>
-	</form>
-</footer>
 </body>
 
 </html>
