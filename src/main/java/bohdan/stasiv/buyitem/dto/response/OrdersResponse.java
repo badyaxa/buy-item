@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 public class OrdersResponse {
 
-    private Long orderId;
+    private Long id;
     //    private String name;
 //    private Integer year;
 //    private Double volume;
@@ -23,7 +23,7 @@ public class OrdersResponse {
      */
 
     public OrdersResponse(Orders order) {
-        orderId = order.getId();
+        id = order.getId();
         customerLogin = order.getCustomer().getLogin();
 //        name = car.getName();
 //        year = car.getYear();

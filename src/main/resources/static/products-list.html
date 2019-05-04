@@ -15,28 +15,28 @@
 			flex-wrap: wrap;
 		}
 
-        .item {
+		.item {
 			width: 19%;
 			margin-bottom: 10px;
 		}
 
-        .item-image {
+		.item-image {
 			width: 100%;
 		}
 		/* Remove the navbar's default rounded borders and increase the bottom margin */
 
-        .navbar {
+		.navbar {
 			margin-bottom: 50px;
 			border-radius: 0;
 		}
 		/* Remove the jumbotron's default bottom margin */
 
-        .jumbotron {
+		.jumbotron {
 			margin-bottom: 0;
 		}
 		/* Add a gray background color and some padding to the footer */
 
-        footer {
+		footer {
 			background-color: #f2f2f2;
 			padding: 25px;
 		}
@@ -51,125 +51,127 @@
 <!--</div>-->
 <!--</div>-->
 <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button class="navbar-toggle" data-target="#myNavbar" data-toggle="collapse" type="button"><span
-                    class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
-            <a class="navbar-brand" href="/">Logo</a></div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
-                <li><a href="/">Home</a></li>
-                <li><a href="/categories">Categories</a></li>
-                <li class="active"><a href="/products">Products</a></li>
-                <li><a href="/oplata">Payment</a></li>
-                <li><a href="/dostavka">Delivery</a></li>
-                <li><a href="/contact">Contact</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="/user"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
-                <li><a href="/user/orders">Orders</a></li>
-                <li><a href="/user/cart"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
-            </ul>
-        </div>
-    </div>
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button class="navbar-toggle" data-target="#myNavbar" data-toggle="collapse" type="button"><span
+					class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
+			<a class="navbar-brand" href="/">Logo</a></div>
+		<div class="collapse navbar-collapse" id="myNavbar">
+			<ul class="nav navbar-nav">
+				<li><a href="/">Home</a></li>
+				<li><a href="/categories">Categories</a></li>
+				<li class="active"><a href="/products">Products</a></li>
+				<li><a href="/oplata">Payment</a></li>
+				<li><a href="/dostavka">Delivery</a></li>
+				<li><a href="/contact">Contact</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="/user"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
+				<li><a href="/user/orders">Orders</a></li>
+				<li><a href="/user/cart"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+			</ul>
+		</div>
+	</div>
 </nav>
 <div style="margin-top: 60px"></div>
 <div class="controllers">
-    <input disabled id="totallElements" type="number">
-    <select id="size">
-        <option value="10">10</option>
-        <option value="15">15</option>
-        <option value="20">20</option>
-    </select>
-    <select id="direction">
-        <option value="ASC">name A - Z</option>
-        <option value="DESC">name Z - A</option>
-    </select>
-    <ul class="pagination" id="paginationButtons"></ul>
-    <input disabled id="currentPage" type="hidden">
-    <input disabled id="totalPages" type="number"></div>
+	<input disabled id="totallElements" type="number">
+	<select id="size">
+		<option value="10">10</option>
+		<option value="15">15</option>
+		<option value="20">20</option>
+	</select>
+	<select id="direction">
+		<option value="ASC">name A - Z</option>
+		<option value="DESC">name Z - A</option>
+	</select>
+	<ul class="pagination" id="paginationButtons"></ul>
+	<input disabled id="currentPage" type="hidden">
+	<input disabled id="totalPages" type="number">
+</div>
 <div class="container text-center"></div>
 <br>
 <footer class="container-fluid text-center">
-    <p>Online Store Copyright</p>
-    <form class="form-inline">Get deals:
-        <input class="form-control" placeholder="Email Address" size="50" type="email">
-        <button class="btn btn-danger" type="button">Sign Up</button>
-    </form>
+	<p>Online Store Copyright</p>
+	<form class="form-inline">Get deals:
+		<input class="form-control" placeholder="Email Address" size="50" type="email">
+		<button class="btn btn-danger" type="button">Sign Up</button>
+	</form>
 </footer>
 <script>
-    makeFirstRequest();
-    $('#currentPage').change(makeRequest);
-    $('#direction').change(makeRequest);
-    $('#size').change(makeRequestSize);
+	makeFirstRequest();
+	$('#currentPage').change(makeRequest);
+	$('#direction').change(makeRequest);
+	$('#size').change(makeRequestSize);
 
-    function makeFirstRequest() {
-        let pathPageNumber = window.location.search.split('?page=')[1];
-        if (pathPageNumber == null) {
-            $('#currentPage').val(1);
-        } else {
-            $('#currentPage').val(pathPageNumber);
-        }
-        console.log(window.location.href.split('?')[0] + '?page=' + $('#currentPage').val());
-        makeRequest()
-    }
+	function makeFirstRequest() {
+		let pathPageNumber = window.location.search.split('?page=')[1];
+		if (pathPageNumber == null) {
+			$('#currentPage').val(1);
+		} else {
+			$('#currentPage').val(pathPageNumber);
+		}
+		console.log(window.location.href.split('?')[0] + '?page=' + $('#currentPage').val());
+		makeRequest()
+	}
 
-    function makeRequestSize() {
-        $('#currentPage').val('1');
-        makeRequest()
-    }
+	function makeRequestSize() {
+		$('#currentPage').val('1');
+		makeRequest()
+	}
 
-    function makeRequest() {
-        $.ajax({
-            url: '/api/product/page'
-            , type: 'POST'
-            , contentType: 'application/json'
-            , data: JSON.stringify(getPaginationRequest())
-            , success: function (res) {
-                setPagination($('#currentPage').val(), res.totalPages);
-                $('#totallElements').val(res.totalElements);
-                $('#totalPages').val(res.totalPages);
-                appendItemsToContainer(res.content)
-            }
-            , error: function (e) {
-                console.log(e)
-            }
-        })
-    }
+	function makeRequest() {
+		$.ajax({
+			url: '/api/product/page'
+			, type: 'POST'
+			, contentType: 'application/json'
+			, data: JSON.stringify(getPaginationRequest())
+			, success: function (res) {
+				setPagination($('#currentPage').val(), res.totalPages);
+				$('#totallElements').val(res.totalElements);
+				$('#totalPages').val(res.totalPages);
+				appendItemsToContainer(res.content)
+			}
+			, error: function (e) {
+				console.log(e)
+			}
+		})
+	}
 
-    function setPagination(currPage, allPages) {
-        var listPagi = $("#paginationButtons");
-        $("#paginationButtons").html('');
-        if (currPage <= allPages) {
-            for (var i = (currPage - 5); i < currPage; i++) {
-                if (i > 0) {
-                    listPagi.append('<button onclick="goToPage(' + i + ')">' + i + '</button>');
-                }
-            }
-            listPagi.append('<button  class="btn active">' + currPage + '</button>');
-            var ii = currPage;
-            ii++;
-            var iiend = 0;
-            for (ii; ii <= allPages; ii++) {
-                if (iiend < 5) {
-                    listPagi.append('<button onclick="goToPage(' + ii + ')">' + ii + '</button>');
-                    iiend++;
-                }
-            }
-        }
-    }
+	function setPagination(currPage, allPages) {
+		var listPagi = $("#paginationButtons");
+		$("#paginationButtons").html('');
+		if (currPage <= allPages) {
+			for (var i = (currPage - 5); i < currPage; i++) {
+				if (i > 0) {
+					listPagi.append('<button onclick="goToPage(' + i + ')">' + i + '</button>');
+				}
+			}
+			listPagi.append('<button  class="btn active">' + currPage + '</button>');
+			var ii = currPage;
+			ii++;
+			var iiend = 0;
+			for (ii; ii <= allPages; ii++) {
+				if (iiend < 5) {
+					listPagi.append('<button onclick="goToPage(' + ii + ')">' + ii + '</button>');
+					iiend++;
+				}
+			}
+		}
+	}
 
-    function goToPage(goPage) {
-        $('#currentPage').val(goPage);
-        makeRequest();
-    }
+	function goToPage(goPage) {
+		$('#currentPage').val(goPage);
+		makeRequest();
+	}
 
-    function appendItemsToContainer(items) {
-        let $container = $('.container');
-        $container.html('');
-        for (let item of items) {
-            let img = item.pathToImage ? '/img/' + item.pathToImage : 'http://denrakaev.com/wp-content/uploads/2015/03/no-image.png';
-            $container.append(`
+	function appendItemsToContainer(items) {
+		let $container = $('.container');
+		$container.html('');
+		for (let item of items) {
+			let img = item.pathToImage ? '/img/' + item.pathToImage : 'http://denrakaev.com/wp-content/uploads/2015/03/no-image.png';
+			$container.append
+			(`
                     <div class="item">
                          <a href="/product/detail/${item.id}">
                             <h3 class="item-title">
@@ -180,20 +182,20 @@
                             <img class="item-image" src="${img}">
                         </a>
                     </div>
-            `)
-        }
-    }
+            	`)
+		}
+	}
 
-    function getPaginationRequest() {
-        return {
-            page: $('#currentPage').val() - 1
-            , size: $('#size').val()
-            , sortRequest: {
-                fieldName: 'name'
-                , direction: $('#direction').val()
-            }
-        };
-    }
+	function getPaginationRequest() {
+		return {
+			page: $('#currentPage').val() - 1
+			, size: $('#size').val()
+			, sortRequest: {
+				fieldName: 'name'
+				, direction: $('#direction').val()
+			}
+		};
+	}
 </script>
 </body>
 

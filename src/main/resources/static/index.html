@@ -7,7 +7,7 @@
 	<meta content="width=device-width, initial-scale=1" name="viewport">
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <!--	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>-->
 	<style>
 		/* Remove the navbar's default rounded borders and increase the bottom margin */
 
@@ -27,6 +27,13 @@
 			padding: 25px;
 		}
 	</style>
+
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet">
+
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic' rel='stylesheet'>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css' rel='stylesheet'>
+    <link href="login/css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -51,11 +58,12 @@
 				<li><a href="/dostavka">Delivery</a></li>
 				<li><a href="/contact">Contact</a></li>
 			</ul>
-			<!--<form class="form-inline my-2 my-md-0">-->
-			<!--<input class="form-control" type="text" placeholder="Search" aria-label="Search">-->
-			<!--</form>-->
-			<!--<input id="search" type="search" placeholder="Search" aria-label="Search">-->
+            <!--			<form class="form-inline my-2 my-md-0">-->
+            <!--			<input class="form-control" type="text" placeholder="Search" aria-label="Search">-->
+            <!--			</form>-->
+            <input aria-label="Search" id="search" placeholder="Search" type="search">
 			<ul class="nav navbar-nav navbar-right">
+                <li><a href="#modal" id="modal_trigger">Login or register</a></li>
 				<li><a href="/user"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
 				<li><a href="/user/orders">Orders</a></li>
 				<li><a href="/user/cart"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
@@ -130,6 +138,100 @@
 		<button class="btn btn-danger" type="button">Sign Up</button>
 	</form>
 </footer>
+
+<div class="popupContainer" id="modal" style="display:none;">
+    <header class="popupHeader">
+        <span class="header_title">Login</span>
+        <span class="modal_close"><i class="fa fa-times"></i></span>
+    </header>
+
+    <section class="popupBody">
+        <!-- Social Login -->
+        <div class="social_login">
+            <div class="">
+                <a class="social_box fb" href="#">
+                    <span class="icon"><i class="fa fa-facebook"></i></span>
+                    <span class="icon_title">Connect with Facebook</span>
+
+                </a>
+
+                <a class="social_box google" href="#">
+                    <span class="icon"><i class="fa fa-google-plus"></i></span>
+                    <span class="icon_title">Connect with Google</span>
+                </a>
+            </div>
+
+            <div class="centeredText">
+                <span>Or use your Email address</span>
+            </div>
+
+            <div class="action_btns">
+                <div class="one_half"><a class="btn" href="#" id="login_form">Login</a></div>
+                <div class="one_half last"><a class="btn" href="#" id="register_form">Sign up</a></div>
+            </div>
+        </div>
+
+        <!-- Username & Password Login form -->
+        <div class="user_login">
+            <form>
+                <!--				<label>Email / Login</label>-->
+                <input placeholder="Login or Phone(+380..) or Email" type="text"/>
+                <br/>
+
+                <!--				<label>Password</label>-->
+                <input placeholder="Password" type="password"/>
+                <br/>
+
+                <div class="checkbox">
+                    <input id="remember" type="checkbox"/>
+                    <label for="remember">Remember me on this computer</label>
+                </div>
+
+                <div class="action_btns">
+                    <div class="one_half"><a class="btn back_btn" href="#"><i class="fa fa-angle-double-left"></i>
+                        Back</a></div>
+                    <div class="one_half last"><a class="btn btn_red" href="#">Login</a></div>
+                </div>
+            </form>
+
+            <a class="forgot_password" href="#">Forgot password?</a>
+        </div>
+
+        <!-- Register Form -->
+        <div class="user_register">
+            <form>
+                <!--				<label>Login</label>-->
+                <input placeholder="Login" type="text"/>
+                <br/>
+
+                <!--				<label>Email Address</label>-->
+                <input placeholder="Email" type="email"/>
+                <br/>
+                <input placeholder="Phone" type="text"/>
+                <br/>
+
+                <!--				<label>Password</label>-->
+                <input placeholder="Password" type="password"/>
+                <br/>
+
+                <div class="checkbox">
+                    <input id="send_updates" type="checkbox"/>
+                    <label for="send_updates">Send me occasional email updates</label>
+                </div>
+
+                <div class="action_btns">
+                    <div class="one_half"><a class="btn back_btn" href="#"><i class="fa fa-angle-double-left"></i>
+                        Back</a></div>
+                    <div class="one_half last"><a class="btn btn_red" href="#">Register</a></div>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>
+
+<!--<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>-->
+<script src='login/js/jquery.leanModal.min_.js'></script>
+<script src="login/js/index.js"></script>
 </body>
 
 </html>

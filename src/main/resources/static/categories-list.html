@@ -170,7 +170,8 @@
 		$container.html('');
 		for (let item of items) {
 			let img = item.pathToImage ? '/img/' + item.pathToImage : 'http://denrakaev.com/wp-content/uploads/2015/03/no-image.png';
-			$container.append(`
+			$container.append
+			(`
                     <div class="item">
                          <a href="/category/detail/${item.id}">
                             <h3 class="item-title">
@@ -180,7 +181,7 @@
                             <img class="item-image" src="${img}">
                         </a>
                     </div>
-            `)
+           	 	`)
 		}
 	}
 
